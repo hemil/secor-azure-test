@@ -19,6 +19,6 @@ from django.urls import path
 from secor_azure_test.views import index
 
 urlpatterns = [
-    path('', index),
+    path('test/', index),
     path('admin/', admin.site.urls),
 ]
