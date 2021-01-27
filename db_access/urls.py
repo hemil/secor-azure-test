@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
-from secor_azure_test.views import index
+from db_access.views import NamesViewSet
+
+router = routers.DefaultRouter()
+router.register(r'names', NamesViewSet)
 
 urlpatterns = [
-    path('test/', index),
-    path('admin/', admin.site.urls),
-    path('db/', include('db_access.urls')),
+    path('', include(router.urls)),
 ]

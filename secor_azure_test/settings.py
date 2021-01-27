@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'db_access',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,11 @@ WSGI_APPLICATION = 'secor_azure_test.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'hemil',
+        'USER': 'sql_admin',
+        'PASSWORD': 'D@7sJZW2ah0a4LFIu',
+        'HOST': 'secazsqdev01.database.windows.net',
     }
 }
 
